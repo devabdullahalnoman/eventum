@@ -17,7 +17,7 @@ export async function middleware(req) {
   }
 
   if (!token && pathname.startsWith("/dashboard")) {
-    const url = new URL("/signIn", req.url);
+    const url = new URL("/auth/signIn", req.url);
     url.searchParams.set("callbackUrl", pathname);
     return NextResponse.redirect(url);
   }

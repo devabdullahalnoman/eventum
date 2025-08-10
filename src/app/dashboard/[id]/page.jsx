@@ -1,4 +1,3 @@
-// src/app/dashboard/[id]/page.jsx
 "use client";
 
 import { useSession } from "next-auth/react";
@@ -24,12 +23,20 @@ export default function EventViewPage() {
     <div className="max-w-2xl">
       <div className="flex items-center justify-between">
         <h1 className="text-2xl font-bold mb-4">Event details</h1>
-        <Link
-          href={`/dashboard/${id}/edit`}
-          className="text-blue-600 underline"
-        >
-          Edit
-        </Link>
+        <div className="flex items-center gap-3">
+          <Link
+            href={`/dashboard/${id}/book`}
+            className="text-green-600 underline"
+          >
+            Book this event
+          </Link>
+          <Link
+            href={`/dashboard/${id}/edit`}
+            className="text-blue-600 underline"
+          >
+            Edit
+          </Link>
+        </div>
       </div>
 
       {isLoading && <p>Loading...</p>}
