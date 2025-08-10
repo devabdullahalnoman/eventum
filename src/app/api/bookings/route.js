@@ -1,4 +1,3 @@
-// src/app/api/bookings/route.js
 import { NextResponse } from "next/server";
 import { getServerSession } from "next-auth";
 import { authOptions } from "../auth/[...nextauth]/route";
@@ -22,7 +21,6 @@ export async function POST(req) {
       collectionNamesObj.registrationCollection
   );
 
-  // Ensure the event exists
   const event = await eventsCol.findOne({ _id: new ObjectId(eventId) });
   if (!event) {
     return NextResponse.json({ error: "Event not found" }, { status: 404 });
@@ -51,7 +49,6 @@ export async function GET() {
       collectionNamesObj.registrationCollection
   );
 
-  // Aggregate to include event info
   const pipeline = [
     { $match: { userEmail: session.user.email } },
     { $sort: { createdAt: -1 } },

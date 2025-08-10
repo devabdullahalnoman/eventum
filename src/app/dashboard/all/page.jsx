@@ -8,7 +8,7 @@ async function fetchAllEvents() {
   const res = await fetch("/api/events/all");
   if (!res.ok) throw new Error("Network response was not ok");
   const result = await res.json();
-  return result?.data || []; // 👈 Guarantees a defined return value
+  return result?.data || [];
 }
 
 export default function AllEventsPage() {
@@ -21,7 +21,7 @@ export default function AllEventsPage() {
   } = useQuery({
     queryKey: ["all-events"],
     queryFn: fetchAllEvents,
-    enabled: status === "authenticated", // prevent query until session is ready
+    enabled: status === "authenticated",
   });
 
   if (isLoading || status === "loading") return <p>loading...</p>;

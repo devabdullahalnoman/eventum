@@ -28,7 +28,7 @@ export async function GET(_req, { params }) {
       return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
     }
 
-    const { id } = await params; // await params
+    const { id } = await params;
     const _id = toObjectId(id);
     if (!_id) {
       return NextResponse.json({ error: "Invalid id" }, { status: 400 });
@@ -57,7 +57,7 @@ export async function PATCH(req, { params }) {
       return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
     }
 
-    const { id } = await params; // await params
+    const { id } = await params;
     const _id = toObjectId(id);
     if (!_id) {
       return NextResponse.json({ error: "Invalid id" }, { status: 400 });
@@ -88,7 +88,7 @@ export async function PATCH(req, { params }) {
 
     await events.updateOne({ _id }, update);
     revalidatePath("/dashboard/events");
-    revalidatePath(`/dashboard/events/${id}`); // use resolved id
+    revalidatePath(`/dashboard/events/${id}`);
 
     return NextResponse.json({ ok: true });
   } catch (e) {
@@ -106,7 +106,7 @@ export async function DELETE(_req, { params }) {
       return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
     }
 
-    const { id } = await params; // await params
+    const { id } = await params;
     const _id = toObjectId(id);
     if (!_id) {
       return NextResponse.json({ error: "Invalid id" }, { status: 400 });
