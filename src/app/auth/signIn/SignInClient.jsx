@@ -31,7 +31,7 @@ export default function SignInPage() {
   }
 
   return (
-    <main className="max-w-md mx-auto p-6 h-screen">
+    <main className="max-w-md mx-auto p-6 min-h-[65vh]">
       <h1 className="text-2xl font-bold mb-6">Sign In</h1>
       <form onSubmit={onSubmit} className="space-y-4">
         <input

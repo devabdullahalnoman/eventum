@@ -8,7 +8,7 @@ export default function DashboardLayout({ children }) {
   const [open, setOpen] = useState(false);
 
   return (
-    <div className="flex min-h-screen text-gray-800">
+    <div className="flex min-h-[65vh] text-gray-800">
       <button
         onClick={() => setOpen(!open)}
         className="sm:hidden absolute top-4 left-4 z-50 p-2 rounded bg-white border shadow"
