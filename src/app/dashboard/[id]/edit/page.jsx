@@ -67,17 +67,20 @@ export default function EventEditPage() {
   }
 
   return (
-    <div className="max-w-xl">
+    <div className="max-w-xl text-base-content">
       <div className="flex items-center justify-between">
         <h1 className="text-2xl font-bold mb-4">Edit event</h1>
-        <Link href={`/dashboard/${id}`} className="text-gray-700 underline">
+        <Link
+          href={`/dashboard/${id}`}
+          className="text-base-content btn btn-outline rounded-2xl"
+        >
           View
         </Link>
       </div>
 
-      {isLoading && <p>Loading...</p>}
+      {isLoading && <p className="text-base-content">Loading...</p>}
       {error && <p className="text-red-500">Failed to load event</p>}
-      {!isLoading && !data && <p className="text-gray-700">Not found.</p>}
+      {!isLoading && !data && <p className="text-base-content">Not found.</p>}
 
       {data && (
         <form onSubmit={handleUpdate} className="space-y-4">
@@ -107,16 +110,13 @@ export default function EventEditPage() {
           )}
 
           <div className="flex gap-3">
-            <button
-              type="submit"
-              className="bg-blue-600 text-white px-4 py-2 rounded"
-            >
+            <button type="submit" className="btn btn-primary rounded-2xl hover:bg-gray-400">
               Save changes
             </button>
             <button
               type="button"
               onClick={handleDelete}
-              className="bg-red-600 text-white px-4 py-2 rounded"
+              className="btn btn-error rounded-2xl hover:bg-gray-400"
             >
               Delete
             </button>

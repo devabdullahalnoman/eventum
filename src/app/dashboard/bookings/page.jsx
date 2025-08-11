@@ -20,48 +20,48 @@ export default function BookingsListPage() {
   const bookings = data?.bookings || [];
 
   return (
-    <div className="max-w-2xl">
+    <div className="max-w-2xl text-base-content">
       <div className="flex items-center justify-between mb-4">
         <h1 className="text-2xl font-bold">Your bookings</h1>
-        <Link href="/dashboard" className="text-gray-700 underline">
+        <Link href="/dashboard" className="btn btn-outline rounded-2xl">
           Back to My Events
         </Link>
       </div>
 
-      {isLoading && <p>Loading...</p>}
+      {isLoading && <p className="text-base-content">Loading...</p>}
       {error && <p className="text-red-500">Failed to load bookings</p>}
       {!isLoading && bookings.length === 0 && (
-        <p className="text-gray-700">No bookings yet.</p>
+        <p className="text-base-content">No bookings yet.</p>
       )}
 
       <div className="space-y-4">
         {bookings.map((b) => (
           <div
             key={b._id || String(b.createdAt)}
-            className="rounded border bg-white p-4"
+            className="rounded-2xl border p-4"
           >
             <div className="flex items-center justify-between">
               <div>
-                <p className="text-sm text-gray-500">Event</p>
+                <p className="text-sm">Event</p>
                 <p className="font-semibold">
                   {b.event?.title || "Event deleted"}
                 </p>
-                <p className="text-gray-700">
+                <p>
                   {b.event?.date
                     ? new Date(b.event.date).toLocaleString()
                     : "—"}
                 </p>
               </div>
               <div className="text-right">
-                <p className="text-sm text-gray-500">Booked on</p>
-                <p className="text-gray-700">
+                <p className="text-sm">Booked on</p>
+                <p>
                   {b.createdAt ? new Date(b.createdAt).toLocaleString() : "—"}
                 </p>
               </div>
             </div>
             {b.note && (
-              <p className="mt-2 text-gray-800">
-                <span className="text-sm text-gray-500">Note: </span>
+              <p className="mt-2">
+                <span className="text-sm">Note: </span>
                 {b.note}
               </p>
             )}
@@ -69,7 +69,7 @@ export default function BookingsListPage() {
               <div className="mt-3">
                 <Link
                   href={`/dashboard/${b.event._id}`}
-                  className="text-blue-600 underline"
+                  className="btn btn-outline rounded-2xl"
                 >
                   View event
                 </Link>

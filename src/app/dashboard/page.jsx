@@ -19,36 +19,36 @@ export default function MyEventsPage() {
 
   return (
     <div>
-      <h1 className="text-2xl font-bold mb-4">My Events</h1>
-      {isLoading && <p>Loading...</p>}
+      <h1 className="text-2xl font-bold mb-4 text-base-content">My Events</h1>
+      {isLoading && <p className="text-base-content">Loading...</p>}
       {error && <p className="text-red-500">Error fetching events</p>}
       {data?.length === 0 && <p>No events yet.</p>}
 
-      <ul className="space-y-4">
+      <ul className="space-y-4 text-base-content">
         {data?.map((event) => (
-          <li key={event._id} className="border p-4 rounded bg-white">
+          <li key={event._id} className="border p-4 bg-base-200 rounded-2xl">
             <div className="flex items-start justify-between gap-4">
               <div>
                 <h3 className="text-lg font-semibold">{event.title}</h3>
                 {event.date && (
-                  <p className="text-sm text-gray-600">
+                  <p className="text-sm">
                     {new Date(event.date).toLocaleDateString()}
                   </p>
                 )}
-                <p className="text-gray-700 mt-1 line-clamp-2">
+                <p className=" mt-1 line-clamp-2">
                   {event.description || "No description"}
                 </p>
               </div>
-              <div className="shrink-0 space-x-3">
+              <div className="shrink-0 space-x-5">
                 <Link
                   href={`/dashboard/${event._id}`}
-                  className="text-blue-600 underline"
+                  className="text-base-content btn btn-outline rounded-2xl"
                 >
                   View
                 </Link>
                 <Link
                   href={`/dashboard/${event._id}/edit`}
-                  className="text-gray-700 underline"
+                  className="text-base-content btn btn-outline rounded-2xl"
                 >
                   Edit
                 </Link>

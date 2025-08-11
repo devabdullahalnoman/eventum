@@ -59,7 +59,7 @@ export default function SignUpPage() {
           required
         />
         <button
-          className="w-full bg-black text-white rounded py-3"
+          className="w-full border hover:bg-gray-400 rounded py-3"
           disabled={loading}
         >
           {loading ? "Creating..." : "Sign Up"}

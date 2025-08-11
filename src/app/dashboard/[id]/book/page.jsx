@@ -46,15 +46,15 @@ export default function BookEventPage() {
   });
 
   return (
-    <div className="max-w-xl">
+    <div className="max-w-xl text-base-content">
       <h1 className="text-2xl font-bold mb-4">Book event</h1>
 
-      {isLoading && <p>Loading event...</p>}
+      {isLoading && <p className="text-base-content">Loading event...</p>}
       {eventData && (
-        <div className="mb-6 rounded border bg-white p-4">
-          <p className="text-sm text-gray-500">Event</p>
+        <div className="mb-6 rounded border p-4">
+          <p className="text-sm">Event</p>
           <p className="text-lg font-semibold">{eventData.title}</p>
-          <p className="text-gray-700">
+          <p>
             {eventData.date ? new Date(eventData.date).toLocaleString() : "—"}
           </p>
         </div>
@@ -69,7 +69,7 @@ export default function BookEventPage() {
         className="space-y-4"
       >
         <div>
-          <label className="block text-sm text-gray-600 mb-1">
+          <label className="block text-sm mb-1">
             Note (optional)
           </label>
           <textarea
@@ -89,11 +89,11 @@ export default function BookEventPage() {
           <button
             type="submit"
             disabled={isSubmitting}
-            className="inline-flex items-center px-4 py-2 rounded bg-green-600 text-white hover:bg-green-700 disabled:opacity-60"
+            className="inline-flex items-center rounded-2xl btn btn-outline disabled:opacity-60"
           >
             {isSubmitting ? "Booking..." : "Confirm booking"}
           </button>
-          <Link href={`/dashboard/${id}`} className="text-gray-600 underline">
+          <Link href={`/dashboard/${id}`} className="btn btn-outline rounded-2xl">
             Cancel
           </Link>
         </div>

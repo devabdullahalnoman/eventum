@@ -24,14 +24,14 @@ export default function AllEventsPage() {
     enabled: status === "authenticated",
   });
 
-  if (isLoading || status === "loading") return <p>loading...</p>;
+  if (isLoading || status === "loading") return <p className="text-base-content">loading...</p>;
   if (isError) return <p className="text-red-500">Failed to load events.</p>;
 
   return (
-    <section className="p-6">
+    <section className="p-6 text-base-content">
       <h1 className="text-xl font-semibold mb-4">All Events</h1>
       {events.length === 0 ? (
-        <p className="text-gray-500">No events found.</p>
+        <p className="text-base-content">No events found.</p>
       ) : (
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {events.map((event) => (

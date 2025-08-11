@@ -51,7 +51,7 @@ export default function SignInPage() {
           required
         />
         <button
-          className="w-full bg-black text-white rounded py-3"
+          className="w-full border hover:bg-gray-400 rounded py-3"
           disabled={loading}
         >
           {loading ? "Signing in..." : "Sign In"}
@@ -62,7 +62,7 @@ export default function SignInPage() {
 
       <p className="text-sm mt-4">
         New here?{" "}
-        <Link href="/signUp" className="underline font-medium">
+        <Link href="/auth/signUp" className="underline font-medium">
           Create an account
         </Link>
       </p>
