@@ -55,9 +55,7 @@ export default function BannerCarousel() {
           className="absolute inset-0"
         >
           <Image src={src} alt={title} fill className="object-cover" priority />
-          {/* Overlay */}
           <div className="absolute inset-0 bg-gradient-to-b from-black/60 to-black/40 z-10" />
-          {/* Text */}
           <div className="absolute inset-0 z-20 flex flex-col items-center justify-center text-center text-white px-6">
             <h1 className="text-4xl md:text-5xl font-bold mb-4">{title}</h1>
             <p className="text-lg md:text-xl max-w-2xl">{subtitle}</p>
