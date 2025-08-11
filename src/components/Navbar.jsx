@@ -19,10 +19,7 @@ export default function Navbar() {
     <nav className="navbar shadow-sm bg-base-200 px-4 sm:px-6">
       <div className="navbar-start">
         <div className="dropdown lg:hidden">
-          <button
-            tabIndex={0}
-            className="btn border-none rounded-2xl px-1"
-          >
+          <button tabIndex={0} className="btn border-none rounded-2xl px-1">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="h-5 w-5"
@@ -51,14 +48,14 @@ export default function Navbar() {
         </div>
 
         {pathname !== "/dashboard" ? (
-          <Link href="/" className="text-2xl font-bold text-base-content">
+          <Link
+            href="/"
+            className="text-xl md:text-4xl font-bold text-base-content"
+          >
             Eventum
           </Link>
         ) : (
-          <Link
-            href="/"
-            className="text-2xl font-bold text-base-content pl-5"
-          >
+          <Link href="/" className="text-4xl font-bold text-base-content pl-5">
             Eventum
           </Link>
         )}
@@ -66,10 +63,15 @@ export default function Navbar() {
 
       <div className="navbar-center hidden lg:flex list-none gap-3">
         {navLinks.map(({ label, href }) => (
-              <li key={href}>
-                <Link href={href} className="hover:bg-neutral-400 p-2 rounded">{label}</Link>
-              </li>
-            ))}
+          <li key={href}>
+            <Link
+              href={href}
+              className="hover:bg-neutral-400 p-2 rounded text-lg"
+            >
+              {label}
+            </Link>
+          </li>
+        ))}
       </div>
 
       <div className="navbar-end gap-3">
@@ -78,14 +80,14 @@ export default function Navbar() {
             <>
               {pathname !== "/dashboard" && (
                 <Link href="/dashboard">
-                  <Button className="cursor-pointer hover:bg-neutral-400 hover:text-foreground rounded-2xl">
+                  <Button className="cursor-pointer hover:bg-neutral-400 hover:text-foreground rounded-2xl md:text-lg">
                     Dashboard
                   </Button>
                 </Link>
               )}
               <Button
                 onClick={() => signOut({ callbackUrl: "/" })}
-                className="cursor-pointer hover:bg-neutral-400 hover:text-foreground rounded-2xl"
+                className="cursor-pointer hover:bg-neutral-400 hover:text-foreground rounded-2xl md:text-lg"
               >
                 Sign Out
               </Button>
@@ -93,12 +95,12 @@ export default function Navbar() {
           ) : (
             <>
               <Link href="/auth/signUp">
-                <Button className="cursor-pointer hover:bg-neutral-400 hover:text-foreground rounded-2xl">
+                <Button className="cursor-pointer hover:bg-neutral-400 hover:text-foreground rounded-2xl md:text-lg">
                   Sign Up
                 </Button>
               </Link>
               <Link href="/auth/signIn">
-                <Button className="cursor-pointer hover:bg-neutral-400 hover:text-foreground rounded-2xl">
+                <Button className="cursor-pointer hover:bg-neutral-400 hover:text-foreground rounded-2xl md:text-lg">
                   Sign In
                 </Button>
               </Link>

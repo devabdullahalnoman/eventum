@@ -12,7 +12,7 @@ export default function ContactPage() {
   }
 
   return (
-    <section className="mx-auto max-w-4xl px-6 py-12 text-base-content h-screen">
+    <section className="mx-auto max-w-4xl px-6 py-12 text-base-content min-h-screen">
       <header className="mb-8">
         <h1 className="text-3xl font-bold tracking-tight">Contact us</h1>
         <p className="mt-2">

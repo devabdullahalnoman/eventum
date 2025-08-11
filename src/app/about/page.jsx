@@ -1,6 +1,6 @@
 export default function AboutPage() {
   return (
-    <section className="mx-auto max-w-5xl px-6 py-12 text-base-content h-screen">
+    <section className="mx-auto max-w-5xl px-6 py-12 text-base-content min-h-screen">
       <header className="mb-10">
         <h1 className="text-3xl font-bold tracking-tight">About Eventum</h1>
         <p className="mt-2">
@@ -22,9 +22,9 @@ export default function AboutPage() {
         <div className="rounded-lg border-2xl p-6 transition hover:shadow-md bg-base-300">
           <h2 className="text-xl font-semibold">What we value</h2>
           <ul className="mt-2 space-y-2">
-            <li>• Clarity over complexity</li>
-            <li>• Ownership and security by default</li>
-            <li>• Predictable performance at scale</li>
+            <li># Clarity over complexity</li>
+            <li># Ownership and security by default</li>
+            <li># Predictable performance at scale</li>
           </ul>
         </div>
 

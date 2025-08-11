@@ -29,7 +29,7 @@ export default function RootLayout({ children }) {
         <SessionProvider>
           <QueryProvider>
             <Navbar />
-            <div className="container mx-auto px-4 py-6">{children}</div>
+            <div className="md:w-11/12 mx-auto px-4 py-6">{children}</div>
             <Footer />
           </QueryProvider>
         </SessionProvider>
