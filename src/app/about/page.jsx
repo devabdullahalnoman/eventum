@@ -1,6 +1,6 @@
 export default function AboutPage() {
   return (
-    <section className="mx-auto max-w-5xl px-6 py-12 text-base-content">
+    <section className="mx-auto max-w-5xl px-6 py-12 text-base-content h-screen">
       <header className="mb-10">
         <h1 className="text-3xl font-bold tracking-tight">About Eventum</h1>
         <p className="mt-2">

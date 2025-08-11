@@ -32,7 +32,7 @@ export default function SignUpPage() {
   }
 
   return (
-    <main className="max-w-md mx-auto p-6">
+    <main className="max-w-md mx-auto p-6 h-screen">
       <h1 className="text-2xl font-bold mb-6">Sign Up</h1>
       <form onSubmit={onSubmit} className="space-y-4">
         <input
